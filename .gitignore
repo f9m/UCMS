@@ -1,0 +1,17 @@
+# ignore sass files
+.sass-cache
+sass/
+config.rb
+compass_app_log.txt
+
+# ignore folders that store the data
+css/*
+data/*
+tpl/*
+upload/*
+
+# sample files should be included
+!*.sample
+
+# 'index.htm' in each folder should be included
+!*index.htm

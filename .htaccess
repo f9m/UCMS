@@ -1,0 +1,28 @@
+# block access to the XML files that holds the data.
+<Files ~ "\.xml$">
+	Order allow,deny
+	Deny from all
+	Satisfy All
+</Files>
+<Files sitemap.xml>
+	Order allow,deny
+	Allow from all
+	Satisfy All
+</Files>
+
+# block direct access to the included php files.
+<Files ~ "\.inc.php$">
+	Order allow,deny
+	Deny from all
+	Satisfy All
+</Files>
+
+RewriteEngine on
+
+# Replace it with your subdirectory path, if needed.
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-\/_]+)$ index.php?path=$1 [QSA,L]
+

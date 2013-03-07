@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding="utf-8"?>
+<document>
+
+	<pages>
+		<index>
+			<id>10</id>
+			<name>index</name>
+			<title>首頁</title>
+			<type>page</type>
+		</index>
+		<about>
+			<id>3</id>
+			<title>關於</title>
+			<type>page</type>
+		</about>
+	</pages>
+	<settings>
+		<dir_base>/</dir_base>
+		<site_name>SITE_NAME</site_name>
+		<owner_name>SOWNER</owner_name>
+		<show_index_title>false</show_index_title>
+		<title_delimiter> | </title_delimiter>
+		<small_nav_delimiter> -|- </small_nav_delimiter>
+		<site_description>DDDDDD</site_description>
+		<nav_divid>1</nav_divid>
+		<nav_display_links_on_footer></nav_display_links_on_footer>
+		<custom_meta></custom_meta>
+		<global_head>Hello World</global_head>
+		<global_foot>Bye</global_foot>
+		<global_aside>hihi, aside</global_aside>
+		<global_show_aside>false</global_show_aside>
+		<copyright></copyright>
+
+	</settings>
+	<admins>
+		<admin>
+			<username>admin</username>
+			<password>3c30572924ab60b34a2426cf247e0689</password>
+		</admin>
+	</admins>
+</document>
