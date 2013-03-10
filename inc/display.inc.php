@@ -70,12 +70,12 @@ function display_nav($current_page, $pages, $nav_divid, $dir_base) {
 	}
 
 	for ($i=0; $i<=$nav_id_max; $i++) {
-		$url = ($nav[$i]['name'] == 'index') ? $dir_base : $dir_base.$nav[$i]['name'];
-		$title = $nav[$i]['title'];
-		if ($nav[$i]['name']) {
-				if ($nav_divid == 2 || ($nav_divid == 1 && $n > 0)) {
-					$return = $return."<li class=\"divider-vertical\"></li>";
-				}
+		if (array_key_exists($i, $nav)) {
+			$url = ($nav[$i]['name'] == 'index') ? $dir_base : $dir_base.$nav[$i]['name'];
+			$title = $nav[$i]['title'];
+			if ($nav_divid == 2 || ($nav_divid == 1 && $n > 0)) {
+				$return = $return."<li class=\"divider-vertical\"></li>";
+			}
 			if ($nav[$i]['name'] == $current_page) $return = $return."<li class=\"active\">";
 			else $return = $return."<li>";
 			$return = $return."<a href=\"$url\">$title</a>";
@@ -95,7 +95,7 @@ function display_nav($current_page, $pages, $nav_divid, $dir_base) {
 function display_small_nav($pages, $nav_divid, $dir_base) {
 	$nav_id_max = 0;
 	$n = 0;
-	$return = "";
+	$return = "<br>";
 
 	$pages = is_object($pages) ? get_object_vars($pages) : $pages;
 	foreach ($pages as $name => $data) {
@@ -107,12 +107,12 @@ function display_small_nav($pages, $nav_divid, $dir_base) {
 
 
 	for ($i=0; $i<=$nav_id_max; $i++) {
-		$url = ($nav[$i]['name'] == 'index') ? $dir_base : $dir_base.$nav[$i]['name'];
-		$title = $nav[$i]['title'];
-		if ($nav[$i]['name']) {
-				if ($n > 0) {
-					$return = $return.$nav_divid;
-				}
+		if (array_key_exists($i, $nav)) {
+			$url = ($nav[$i]['name'] == 'index') ? $dir_base : $dir_base.$nav[$i]['name'];
+			$title = $nav[$i]['title'];
+			if ($n > 0) {
+				$return = $return.$nav_divid;
+			}
 			$return = $return."<a href=\"$url\">$title</a>";
 			$n += 1;
 		}
